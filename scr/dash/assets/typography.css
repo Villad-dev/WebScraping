@@ -1,0 +1,11 @@
+body {
+    font-family: sans-serif;
+    background-color: darkslateblue;
+}
+
+label{
+    font-size: 18px;
+    border: 4px;
+    color: rgb(0, 166, 255);
+
+}

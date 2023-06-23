@@ -71,7 +71,7 @@ class Driver:
             for tr in range(2, tr_count):
                 if tr == 3:
                     if (self.getObject('//*[@id="contentcolumn"]/div/table/tbody/tr[3]/td[1]')!= "Time:"):
-                        arr[5] = ","
+                        arr[5] = " "
                         arr[6] = self.getImageLink('//*[@id="contentcolumn"]/div/table/tbody/tr[3]/td[2]/img')  # Image
                         arr[7] = self.getObject('//*[@id="contentcolumn"]/div/table/tbody/tr[3]/td[2]')  # Type
                     else:
@@ -98,18 +98,18 @@ class Driver:
         try:
             o = self.driver.find_element(By.XPATH, strXPath)
             if o.text == "" or o.text is None or o.text == " ":
-                res = ","
+                res = " "
             else:
                 res = o.text
         except NoSuchElementException:
             print("No such object", strXPath)
-            return " ,"
+            return " "
         except NoSuchWindowException:
             print("No such window", strXPath)
-            return " ,"
+            return " "
         except StaleElementReferenceException:
             print("Element is stale")
-            return " ,"
+            return " "
 
         return res
 
@@ -128,13 +128,13 @@ class Driver:
             )
         except NoSuchElementException:
             #print("Image does not exist")
-            return ","
+            return " "
         except NoSuchWindowException:
             print("No such window")
-            return ","
+            return " "
         except StaleElementReferenceException:
             print("Image is stale")
-            return ","
+            return " "
 
         return image_link
 
